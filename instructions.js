@@ -162,7 +162,7 @@ function getNextInstructions(slideNum, expStage){
         case 2:
           return "In the main task, you will follow the same procedure as in the last practice task. The task will take approximately 20 minutes, and is divided into 4 sections, each lasting about 5 minutes.";
         case 3:
-          return "You will receive points for each correct response. Some stimuli will be worth more points than others.";
+          return "You will receive points for each correct response. Some trials will be worth more points than others.";
         case 4:
           changeTextFormat('#instructions' + slideNum,'font-weight','bold');
           return "Your objective is to score as many points as possible. ";
