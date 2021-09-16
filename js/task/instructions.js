@@ -311,7 +311,7 @@ function exitResponse(){
   } else if (instructions["exitResponse"][expStage] == "#nextSectionButton") {
     $('#nextSectionButton').show();
   } else if (instructions["exitResponse"][expStage] == "buttonPressStartTask"){
-    keyListener = 5;
+    setTimeout(function(){keyListener = 5;},250);
   } // else if (instructions["exitResponse"][expStage] == "keyPressNextSection"){
   //   keyListener = 9;
   // }

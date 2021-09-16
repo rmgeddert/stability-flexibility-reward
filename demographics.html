@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/common/jquery-3.4.1.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         // declare data variable
@@ -27,7 +27,7 @@
 
           // combine data and update menu.html code
       		$("#demographics", opener.window.document).val(data.join(";"));
-      		opener.updateMainMenu(1);
+      		opener.updateMainMenu(2);
 
           // close window again
       		JavaScript:window.close();

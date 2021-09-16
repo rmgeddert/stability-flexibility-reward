@@ -1,5 +1,3 @@
-console.log("Version - Last Updated 8-13-2021");
-
 let curStage = 1;
 
 function basicPopup(url) {
@@ -86,7 +84,7 @@ function prepareMenu(){
         basicPopup("demographics.html");
         break;
       case 2:
-        basicPopup("main.html");
+        basicPopup("task.html");
         break;
     }
   });
