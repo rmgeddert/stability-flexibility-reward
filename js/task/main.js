@@ -6,12 +6,12 @@ let testMode = false;
 let speed = "normal"; //fast, normal
 speed = (testMode == true) ? "fast" : speed; //testMode defaults to "fast"
 let skipPractice = false; // turn practice blocks on or off
-let openerNeeded = false; // require menu.html to run task (needed for mturk)
+let openerNeeded = true; // require menu.html to run task (needed for mturk)
 
 // ----- Experiment Paramenters (CHANGE ME) ----- //
 let stimInterval = (speed == "fast") ? 10 : 1500; //1500 stimulus interval
 let fixInterval = (speed == "fast") ? 10 : 500; //500 ms intertrial interval
-let nBlocks = 4, trialsPerBlock = 128; // (multiples of 16)
+let nBlocks = 4, trialsPerBlock = 112; // (multiples of 16)
 let nPracticeTrials = 16;
 let miniBlockLength = 0; // break within block, every n trials. 0 to turn off
 let practiceAccCutoff = (testMode == true) ? 0 : 75;
@@ -72,6 +72,7 @@ let blockOrder = getBlockOrder(randIntFromInterval(1,4));
   // see counterbalancing.js for details
 
   function experimentFlow(){
+    document.body.style.cursor = 'none';
     if (openerNeeded == true && opener == null) {
       promptMenuClosed();
     } else {
@@ -82,11 +83,11 @@ let blockOrder = getBlockOrder(randIntFromInterval(1,4));
 
       // go to the correct task based on expStage variable
       if (expStage.indexOf("prac1") != -1){
-        practiceTask("firstPractice", getFirstPracticeTask(), runPracticeTrial)
+        practiceTask("firstPractice", getFirstPracticeTask(), runPracticeTrial, nPracticeTrials/2)
       } else if (expStage.indexOf("prac2") != -1){
-        practiceTask("secondPractice", getSecondPracticeTask(), runPracticeTrial)
+        practiceTask("secondPractice", getSecondPracticeTask(), runPracticeTrial, nPracticeTrials/2)
       } else if (expStage.indexOf("prac3") != -1){
-        practiceTask("thirdPractice", "", runPracticeTrial)
+        practiceTask("thirdPractice", "", runPracticeTrial, nPracticeTrials)
       } else if (expStage.indexOf("main1") != -1){
         mainTask();
       } else {

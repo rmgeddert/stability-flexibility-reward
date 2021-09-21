@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  console.log("updated as of 9/16/21 6:23");
+  let url = window.location.href;
+  let subID = Boolean(url) ? url.split("?")[1] : "No_ID_specified";
 
   $(document).on("click", "#no-consent-btn", function(){
     $("#consent-form").hide();
@@ -7,10 +10,6 @@ $(document).ready(function(){
   });
 
   $(document).on("click", "#yes-consent-btn", function(){
-      let netID;
-      while (!netID) {
-          netID = prompt("Please enter your SONA ID Code (5 digits)", "");
-      }
-      window.open("menu.html?" + "workerid=" + netID + "&hitid=" + "SONA_sfr_1" + "&assid=" + netID , "_self");
+      window.open("menu.html?" + "workerid=" + subID + "&hitid=" + "SONA_sfr_1" + "&assid=" + "no_assid" , "_self");
   });
 });

@@ -1,9 +1,9 @@
-function practiceTask(name, task, func){
+function practiceTask(name, task, func, trials){
   sectionType = "pracTask";
   taskName = name;
   hideInstructions();
   $("#taskCanvas").show();
-  createArrays(nPracticeTrials, task);
+  createArrays(trials, task);
   taskFunc = func;
   countDown(3);
 }
@@ -31,7 +31,7 @@ function createArrays(nTrials, task){
 function runPracticeTrial(){
   if (openerNeeded == false || opener != null) {
 
-    if (trialCount <= nPracticeTrials){
+    if (trialCount <= taskStimuliSet.length){
       // if (expType == 3){ //check if key is being held down
       //   expType = 4;
       //   promptLetGo();
@@ -45,7 +45,7 @@ function runPracticeTrial(){
       // }
 
     } else { //if practice block is over, go to feedback screen
-      practiceAccuracyFeedback( Math.round( accCount / (blockTrialCount) * 100 ) );
+      practiceAccuracyFeedback( Math.round( accCount / (trialCount - 1) * 100 ) );
     }
 
   } else {
@@ -164,7 +164,7 @@ function drawPoints(){
     // } else {
     //   pointText = String(points)
     // }
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "green";
     ctx.fillText("+"+pointsText,canvas.width/2,canvas.height/2);
   } else if (acc == 0) {
     ctx.fillStyle = "red";

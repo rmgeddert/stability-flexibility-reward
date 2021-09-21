@@ -37,6 +37,7 @@ function navigateInstructionPath(repeat = false){
     }
     runInstructions();
   } else {
+    block = 1;
     switch (expStage){
       case "prac1-1":
         expStage = "prac1-2";
@@ -199,6 +200,8 @@ function getNextInstructions(slideNum, expStage){
 }
 
 function runInstructions(){
+  document.body.style.cursor = 'auto';
+
   // main instruction function (come here at start of instruction block)
   sectionStart = new Date().getTime() - runStart;
   sectionType = "instructions";

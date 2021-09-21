@@ -12,14 +12,14 @@ function updateMainMenu(expStage){
   // display text based on experiment stage
   switch(expStage){
     case 1: //initial sound check
-      $("#instruction").text("Click button to fill out demographic survey. PLEASE DO NOT CLOSE THIS WINDOW.");
+      $("#instruction").text("Click the button below to fill out the demographic survey. PLEASE DO NOT CLOSE THIS WINDOW.");
       $("#continueButton").show();
       $("#table").show();
       $("#instruction").show();
       break;
     case 2: //main task
       $("#continueButton").show();
-      $("#instruction").text("Click 'Continue' button to start the main task. PLEASE DO NOT CLOSE THIS WINDOW.");
+      $("#instruction").text("Click the 'Continue' button below to start the main task. PLEASE DO NOT CLOSE THIS WINDOW.");
       $("#instruction").show();
       break;
     case 3: //debriefing
