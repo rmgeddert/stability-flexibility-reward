@@ -115,7 +115,7 @@ function getNextInstructions(slideNum, expStage){
         case 4:
           $( getImageText(instructionImages[1]) ).insertAfter( "#instructions" + slideNum);
           iterateAgain = true;
-          return "This block contains " + nPracticeTrials + " trials. Please place your hands on the 'Z' and 'M' keys as shown.";
+          return "This block contains " + nPracticeTrials/2 + " trials. Please place your hands on the 'Z' and 'M' keys as shown.";
         case 5:
           changeTextFormat('#instructions' + slideNum,'font-weight','bold');
           return "Press any button to begin.";
@@ -133,7 +133,7 @@ function getNextInstructions(slideNum, expStage){
         case 4:
           $( getImageText(instructionImages[1]) ).insertAfter( "#instructions" + slideNum);
           iterateAgain = true;
-          return "This block contains " + nPracticeTrials + " trials. Please place your hands on the 'Z' and 'M' keys as shown.";
+          return "This block contains " + nPracticeTrials/2 + " trials. Please place your hands on the 'Z' and 'M' keys as shown.";
         case 5:
           changeTextFormat('#instructions' + slideNum,'font-weight','bold');
           return "Press any button to begin.";

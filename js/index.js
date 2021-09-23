@@ -10,6 +10,6 @@ $(document).ready(function(){
   });
 
   $(document).on("click", "#yes-consent-btn", function(){
-      window.open("menu.html?" + "workerid=" + subID + "&hitid=" + "SONA_sfr_1" + "&assid=" + "no_assid" , "_self");
+      window.open("menu.html?" + "workerid=" + subID + "&hitid=" + "SONA_sfr_1" + "&assid=" + subID , "_self");
   });
 });
