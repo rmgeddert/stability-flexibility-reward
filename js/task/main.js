@@ -72,10 +72,12 @@ let blockOrder = getBlockOrder(randIntFromInterval(1,4));
   // see counterbalancing.js for details
 
   function experimentFlow(){
-    document.body.style.cursor = 'none';
     if (openerNeeded == true && opener == null) {
       promptMenuClosed();
     } else {
+      // hide cursor
+      document.body.style.cursor = 'none';
+
       // reset block and trial counts
       accCount = 0;
       blockTrialCount = 1;
