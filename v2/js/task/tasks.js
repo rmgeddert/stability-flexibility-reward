@@ -176,12 +176,13 @@ function drawPoints(){
 }
 
 function getPoints(){
-  let points = 1; //base
-  // add points for congruency based on block type
-  points+=blockRewards[blockOrder[block-1]][congruencyArr[trialCount - 1]];
-  // add points for switch type based on block type
-  points+=blockRewards[blockOrder[block-1]][switchRepeatArr[trialCount - 1]];
-  return points;
+  let congruencyPoints = blockRewards[blockOrder[block-1]][congruencyArr[trialCount - 1]];
+  let switchTypePoints = blockRewards[blockOrder[block-1]][switchRepeatArr[trialCount - 1]];
+  if (congruencyPoints == 1 && switchTypePoints == 1) {
+    return 10;
+  } else {
+    return 1;
+  }
 }
 
 function drawFeedback(){
